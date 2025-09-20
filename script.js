@@ -34,21 +34,21 @@ function spawnEnemies() {
     let radius, color, speed, scoreValue;
     const rand = Math.random();
 
-    // 70% chance for large enemy
-    if (rand < 0.7) { 
+    // Approx. 33.3% chance for large enemy
+    if (rand < 0.333) { 
         radius = 30;
         color = 'hsl(240, 50%, 60%)';
         speed = 1.5;
         scoreValue = 10;
     } 
-    // 20% chance for medium enemy
-    else if (rand < 0.90) { // MODIFIED FROM 0.95 to 0.90
+    // Approx. 33.3% chance for medium enemy
+    else if (rand < 0.666) { 
         radius = 20;
         color = 'hsl(60, 50%, 60%)';
         speed = 2;
         scoreValue = 25;
     } 
-    // 10% chance for small enemy
+    // Approx. 33.3% chance for small enemy
     else { 
         radius = 10;
         color = 'hsl(0, 80%, 60%)';
@@ -80,10 +80,4 @@ function endGame() { /* endGame function is unchanged */ gameOver=!0;cancelAnima
 // --- EVENT LISTENERS ---
 // (Event listeners are unchanged)
 window.addEventListener('mousemove', (event) => { const rect = canvas.getBoundingClientRect(); mouse.x = event.clientX - rect.left; mouse.y = event.clientY - rect.top; });
-window.addEventListener('click', (event) => { if (gameOver) return; const projectileSpeed = 6; const velocity = { x: Math.sin(player.angle) * projectileSpeed, y: -Math.cos(player.angle) * projectileSpeed }; const noseX = player.x + Math.sin(player.angle) * player.radius; const noseY = player.y - Math.cos(player.angle) * player.radius; projectiles.push(new Projectile(noseX, noseY, 5, 'white', velocity)); });
-canvas.addEventListener('mousedown', (event) => { event.preventDefault(); });
-restartButton.addEventListener('click', () => { init(); });
-
-
-// Start game
-init();
+window.addEventListener('click', (event) => { if (gameOver) return; const projectileSpeed = 6; const velocity = { x: Math.sin(
