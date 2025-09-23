@@ -16,11 +16,10 @@ h1 {
     text-shadow: 0 0 10px #00ffff;
 }
 
-/* NEW: Flex container for game and scoreboard */
 .main-layout {
     display: flex;
-    align-items: flex-start; /* Align items to the top */
-    gap: 20px; /* Space between game and scoreboard */
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .game-container {
@@ -34,8 +33,6 @@ canvas {
     display: block;
     user-select: none;
 }
-
-/* REMOVED: #score-display and #ui-container are gone or simplified */
 
 #game-over-menu {
     position: absolute;
@@ -53,7 +50,6 @@ canvas {
     display: none;
 }
 
-/* NEW: Styles for the scoreboard */
 #scoreboard {
     width: 200px;
     padding: 20px;
@@ -88,7 +84,6 @@ canvas {
     text-shadow: 0 0 8px #ffffff;
 }
 
-
 #restart-button {
     background-color: #00ffff;
     color: #1a1a2e;
@@ -112,3 +107,30 @@ canvas {
     border-radius: 8px;
     border: 1px solid #00ffff;
 }
+
+.score-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.score-list li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.score-list .dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.score-list .blue { background-color: hsl(240, 50%, 60%); }
+.score-list .yellow { background-color: hsl(60, 50%, 60%); }
+.score-list .red { background-color: hsl(0, 80%, 60%); }
